@@ -5,6 +5,9 @@ target/
 *.sw?
 .vscode/
 .metals/
+.bloop/
+project/project/
+project/metals.sbt
 
 # Ignore [ce]tags files
 tags
