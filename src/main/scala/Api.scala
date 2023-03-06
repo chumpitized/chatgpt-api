@@ -19,7 +19,7 @@ object ChatRoutes {
       import dsl._  
 
       val routes = HttpRoutes.of[F] {
-        case req @ GET -> Root / "chat" => for {
+        case req @ POST -> Root / "chat" => for {
           chat    <- req.as[Chat]
           reply   <- client.completion(chat)
           choices <- Async[F].fromOption(reply.choices.headOption, new Exception("Something went wrong"))
